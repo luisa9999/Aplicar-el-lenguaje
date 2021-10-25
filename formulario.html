@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset=utf-8>
+		<meta name=description content="maqiuetado base de una pagina web">
+		<meta name=viewport content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/estilo.css">
+		<link rel="stylesheet" href="css/bootstrap.css">
+		
+		<script>
+			function validarFormulario(){
+			var txtNombre = document.getElementById('nombre').value;
+			var txtDireccion = document.getElementById('direccion').value;
+			var txtTelefono = document.getElementById('telefono').value;
+			var txtCorreo = document.getElementById('correo').value;
+			var cmbSelector = document.getElementById('selector').selectedIndex;
+			var chkEstado = document.getElementById('checkBox');
+			//Test campo obligatorio
+			if(txtNombre == null || txtNombre.length == 0 ){
+			alert('ERROR: debes ingresar un nombre');
+			return false;
+			}			
+			//Test campo obligatorio
+			if(txtDireccion == null || txtDireccion.length == 0 ){
+			alert('ERROR: debes ingresar su direccion');
+			return false;
+			}
+			//Test campo obligatorio
+			if(txtTelefono == null || txtTelefono.length == 0 ){
+			alert('ERROR: debes ingresar su telefono');
+			return false;
+			}
+			//Test campo obligatorio
+			if(txtCorreo == null || txtCorreo.length == 0 ){
+			alert('ERROR: debes ingresar su correo');
+			return false;
+			}
+			//Test comboBox
+			if(cmbSelector == null || cmbSelector == 0){
+			alert('ERROR: Debe seleccionar una opción de ciudad');
+			return false;
+			}
+			//Test checkBox
+			if(!chkEstado.checked){
+			alert('ERROR: Debe seleccionar su edad');
+			return false;
+			}
+			alert('DATOS CORRECTOS, ENVIANDO INFORMACIÓN AL SERVIDOR');
+			return true;
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="contenedor"><br>
+			<div id="header"><br>
+				<button type="button" class="btn btn-primary" onclick="location.href='principal.html'">INICIO</button>
+				<button type="button" class="btn btn-secondary" onclick="location.href='tabla.html'">TABLAS</button>
+				<button type="button" class="btn btn-info" onclick="location.href='video.html'">VIDEO</button>
+				<button type="button" class="btn btn-dark" onclick="location.href='formulario.html'">FORMULARIO</button>
+			</div>
+			
+			<div id="nav">
+			 <img src="img/www.png" class="img">
+			 <img src="img/datos.png" class="img">
+			 <img src="img/busqueda.png" class="img">
+			 <img src="img/html.png" class="img">
+			 <img src="img/css.png" class="img">
+			 <img src="img/reparar.png" class="img">
+			</div>
+			<div id="contenido">
+				<form action="" onsubmit="return validarFormulario()">
+					<label for="nombre">
+					<span>Nombre:</span>
+					</label>
+					<input id="nombre" name="nombre" type="text"><br>				
+					<label for="direccion">
+					<span>Direccion:</span>
+					</label>
+					<input id="direccion" name="direccion" type="text"><br>		
+					<label for="telefono">
+					<span>Telefono:</span>
+					</label>
+					<input id="telefono" name="telefono" type="text"><br>
+					<label for="correo">
+					<span>Correo:</span>
+					</label>
+					<input id="correo" name="correo" type="text"><br>
+					<select id="selector" name="selector">
+					<option value=""></option>
+					<option value="1">Medellin</option>
+					<option value="2">Bogota</option>
+					<option value="3">Cali </option>
+					<option value="4">Barranquilla</option>
+					</select><br>
+					<label for="checkBox">
+					<span>Edad</span>
+					</label><br>
+					<input id="checkBox" name="checkBox" type="checkbox"> de 0 a 100
+					<br>
+					<input type="submit" value="ENVIAR">
+				</form>
+			</div>
+			<div id="footer">
+				https://desarrolloweb.com/articulos/que-es-html.html
+			</div>
+		</div>
+	</body>
+	
+</html>
